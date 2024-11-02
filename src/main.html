@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer - Your Gateway to the Solar System!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/planets.css">
+    <link rel="icon" href="/public/mascot/cosmo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand animate__animated animate__bounceIn" href="./main.html">
+                    <span class="star-icon">⭐</span> Space Explorer Kids!
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="./main.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./planets.html">Planets</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./facts.html">Fun Facts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./games.html">Space Games</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <section id="home" class="hero-section text-center">
+            <h1 class="display-4 animate__animated animate__fadeIn">Welcome Young Space Explorers! 🚀</h1>
+            <p class="lead animate__animated animate__fadeIn">Get ready for an amazing journey through our Solar System!</p>
+            <div class="mascot-welcome">
+                <img src="../public/mascot/cosmo.png" alt="Space Mascot" class="mascot-img">
+                <p class="mascot-text">Hi! I'm Cosmo! I'll be your guide through space!</p>
+            </div>
+        </section>
+
+        <section id="featured-planets" class="mt-5">
+            <h2 class="text-center section-title">Our Amazing Planets</h2>
+            <div class="row planet-carousel">
+                <!-- Mercury -->
+                <article class="col-md-4">
+                    <div class="planet-card p-3">
+                        <h3>Mercury</h3>
+                        <ul class="fun-facts-list">
+                            <li>🌡️ Hottest and coldest planet!</li>
+                            <li>🏃‍♂️ Fastest planet around the Sun</li>
+                            <li>📏 Smallest planet in our family</li>
+                        </ul>
+                        <button class="btn btn-wonder" onclick="showFunFact('./planets.html')">Wonder More!</button>
+                    </div>
+                </article>
+
+                <!-- Venus -->
+                <article class="col-md-4">
+                    <div class="planet-card p-3">
+                        <h3>Venus</h3>
+                        <ul class="fun-facts-list">
+                            <li>☁️ Covered in thick clouds</li>
+                            <li>🌡️ Hotter than Mercury!</li>
+                            <li>⭐ The brightest planet we see</li>
+                        </ul>
+                        <button class="btn btn-wonder" onclick="showFunFact('./planets.html')">Wonder More!</button>
+                    </div>
+                </article>
+
+                <!-- Earth -->
+                <article class="col-md-4">
+                    <div class="planet-card p-3">
+                        <h3>Earth</h3>
+                        <ul class="fun-facts-list">
+                            <li>🌊 Has liquid water oceans</li>
+                            <li>🌍 Our amazing home!</li>
+                            <li>🌱 Only planet with known life</li>
+                        </ul>
+                        <button class="btn btn-wonder" onclick="showFunFact('./planets.html')">Wonder More!</button>                    
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Solar System Overview Section -->
+        <section id="solar-system-overview" class="mt-5">
+            <h2 class="text-center section-title">Our Solar System Map 🌠</h2>
+            <div class="solar-system-container">
+                <div class="sun-container text-center">
+                    <div class="sun"></div>
+                    <p>Our Sun</p>
+                </div>
+                <div class="planets-orbit-container">
+                    <!-- Planets will be added by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="space-vocabulary" class="mt-5">
+            <h2 class="text-center section-title">Space Word of the Day! 📚</h2>
+            <div class="word-card">
+                <h3 id="space-word" class="text-center mb-3">Loading...</h3>
+                <p id="word-definition" class="text-center">Loading...</p>
+                <button class="btn btn-wonder mt-3" onclick="newSpaceWord()">New Word!</button>
+            </div>
+        </section>
+
+        <section id="space-timeline" class="mt-5">
+            <h2 class="text-center section-title">Space History Timeline 🚀</h2>
+            <div class="timeline-container">
+                <div class="timeline-scroll" id="timeline-content">
+                    <!-- Timeline items will be added by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ask-astronaut" class="mt-5">
+            <h2 class="text-center section-title">Ask an Astronaut! 👨‍🚀</h2>
+            <div class="astronaut-qa-container">
+                <div class="astronaut-message">
+                    <img src="/public/mascot/mascot2.png" alt="Astronaut" class="astronaut-img">
+                    <div id="qa-container" class="qa-box">
+                        <h3>Today's Question:</h3>
+                        <p id="current-question"></p>
+                        <p id="current-answer"></p>
+                    </div>
+                </div>
+                <!-- <button class="btn btn-wonder mt-3" onclick="nextQuestion()">Next Question!</button> -->
+            </div>
+        </section>
+
+
+
+        <section id="diy-experiments" class="mt-5">
+            <h2 class="text-center section-title">Fun Space Experiments! 🔬</h2>
+            <div class="experiment-carousel" id="experiment-container">
+                <!-- Experiment cards will be added by JavaScript -->
+            </div>
+            <div class="carousel-controls">
+                <button class="btn btn-wonder" onclick="previousExperiment()">Previous</button>
+                <button class="btn btn-wonder" onclick="createExperiments()">Next</button>
+            </div>
+        </section>
+
+        <section id="space-jobs" class="mt-5">
+            <h2 class="text-center section-title">Space Jobs of the Future! 💫</h2>
+            <div id="jobs-grid">
+                <!-- Job cards will be added by JavaScript -->
+            </div>
+        </section>
+
+
+
+        <section id="earth-connection" class="mt-5">
+            <h2 class="text-center section-title">Earth from Space 🌍</h2>
+            <div class="earth-facts-container">
+                <div class="earth-image-container">
+                    <div class="rotating-earth"></div>
+                </div>
+                <div class="earth-fact-cards" id="earth-facts">
+                    <!-- Earth facts will be added by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive-zone" class="mt-5">
+            <h2 class="text-center section-title">Fun Space Activities</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="activity-card">
+                        <h3>🎮 Space Quiz</h3>
+                        <div class="quiz-container">
+                            <p id="quiz-question">What's the largest planet in our Solar System?</p>
+                            <input type="text" id="quiz-answer" class="form-control" placeholder="Type your answer here!">
+                            <button class="btn btn-primary mt-3" onclick="checkQuizAnswer()">Check Answer!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="activity-card">
+                        <h3>🎨 Color the Planets</h3>
+                        <p>Click on a planet to learn its real colors!</p>
+                        <div class="planet-colors" id="planet-colors">
+                            <!-- Planet circles will be added by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="did-you-know" class="mt-5">
+            <h2 class="text-center section-title">Amazing Space Facts! 🌟</h2>
+            <div class="fact-carousel">
+                <div class="fact-card active">
+                    <p>One day on Venus is longer than its year! 😮</p>
+                </div>
+                <div class="fact-card">
+                    <p>Jupiter has 79 moons! That's a big family! 🌙</p>
+                </div>
+                <div class="fact-card">
+                    <p>Saturn's rings are mostly made of ice! ❄️</p>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="nextFact()">Next Fact!</button>
+        </section>
+    </main>
+
+    <footer class="mt-5 text-center footer-fun">
+        <div class="container">
+            <p>Made with ❤️ for young space explorers!</p>
+            <p>&copy; 2024 Space Explorer Learning</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

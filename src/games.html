@@ -1,0 +1,150 @@
+    <!-- index.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space Games for Kids!</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css//games.css">
+        <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <link rel="icon" href="/public/mascot/cosmo.png" type="image/x-icon">
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand animate__animated animate__bounceIn" href="./main.html">
+                        <span class="star-icon">⭐</span> Space Explorer Kids!
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="./main.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./planets.html">Planets</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./facts.html">Fun Facts</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./games.html">Space Games</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container my-5">
+            <h1 class="text-center mb-5 animate__animated animate__bounceIn">
+                Space Games Adventure! <span class="rocket-emoji">🎮</span>
+            </h1>
+
+            <div class="row" id="gamesContainer">
+                <!-- Memory Game Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="game-card animate__animated animate__fadeIn">
+                        <div class="game-icon">🎴</div>
+                        <h3>Space Memory</h3>
+                        <p>Match the space cards and test your memory!</p>
+                        <button class="play-btn" data-game="memory">Play Now!</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Game Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="game-card animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                        <div class="game-icon">❓</div>
+                        <h3>Space Quiz</h3>
+                        <p>Test your knowledge about space!</p>
+                        <button class="play-btn" data-game="quiz">Play Now!</button>
+                    </div>
+                </div>
+
+                <!-- Asteroid Dodge Game Card -->
+                <div class="col-md-4 mb-4">
+                    <div class="game-card animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+                        <div class="game-icon">☄️</div>
+                        <h3>Asteroid Dodge</h3>
+                        <p>Guide your spaceship through asteroids!</p>
+                        <button class="play-btn" data-game="asteroid">Play Now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Modals -->
+        <!-- Memory Game Modal -->
+        <div class="modal fade" id="memoryGameModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Space Memory</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="game-stats mb-3">
+                            Matches: <span id="matchCount">0</span> | 
+                            Attempts: <span id="attemptCount">0</span>
+                        </div>
+                        <div id="memoryGameBoard" class="memory-board"></div>
+                        <!-- Add memoryGameStats here to track player and AI scores -->
+                        <div id="memoryGameStats" class="game-scores">
+                            Player Score: 0 | AI Score: 0
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Quiz Modal -->
+        <div class="modal fade" id="quizGameModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Space Quiz</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="quiz-progress mb-3">
+                            Question <span id="currentQuestion">1</span>/5
+                        </div>
+                        <div id="quizContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asteroid Game Modal -->
+        <div class="modal fade" id="asteroidGameModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Asteroid Dodge</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="game-stats mb-3">
+                            Score: <span id="asteroidScore">0</span>
+                        </div>
+                        <canvas id="gameCanvas" width="800" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <!-- <img id="playerIcon" src="/public/games/space-ship.jpg" style="display:none;" />
+        <img id="enemyIcon" src="/public/games/asteroid.jpg" style="display:none;" /> -->
+        <footer class="mt-5 text-center footer-fun">
+            <div class="container">
+                <p>Made with ❤️ for young space explorers!</p>
+                <p>&copy; 2024 Space Explorer Learning</p>
+            </div>
+        </footer>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/games.js"></script>
+    </body>
+    </html>

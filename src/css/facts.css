@@ -1,0 +1,203 @@
+/* Main Styles */
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: rgba(75, 0, 130, 0.9);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 1rem;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffd700 !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: #fff !important;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px #ffd700;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: rgba(26, 26, 46, 0.8);
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.hero-section h1 {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+/* Mascot Styles */
+.mascot-welcome {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.mascot-img {
+    border-radius: 50%;
+    border: 3px solid #ffd700;
+    animation: float 3s ease-in-out infinite;
+    height: 150px;
+    width: 150px;
+}
+
+.mascot-text {
+    background-color: rgba(255, 215, 0, 0.9);
+    color: #4b0082;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Planet Cards */
+.planet-card {
+    background: linear-gradient(145deg, #2a2a4e, #16213e);
+    border: 2px solid #ffd700;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    text-align: center; /* Center the content */
+    min-height: 350px;  /* Set a consistent height */
+}
+
+.planet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.planet-img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure images are cropped consistently */
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+
+.fun-facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.fun-facts-list li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: rgba(75, 0, 130, 0.3);
+    border-radius: 10px;
+}
+
+/* Buttons */
+.btn-wonder {
+    background-color: #ffd700;
+    color: #4b0082;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-wonder:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Fact Carousel */
+.fact-carousel {
+    position: relative;
+    min-height: 150px;
+    background-color: rgba(75, 0, 130, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.fact-card {
+    display: none;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.fact-card.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Footer */
+.footer-fun {
+    background-color: rgba(75, 0, 130, 0.9);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    color: #fff;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem;
+    }
+    
+    .planet-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Modal */
+.modal-content {
+    background-color: #2a2a4e;
+    color: #fff;
+}
+
+.modal-title {
+    color: #ffd700;
+}
+
+
+/* Space Wiki Section Styles */
+.wiki-categories {
+    margin-bottom: 30px;
+}
+
+.wiki-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+}
+
+.wiki-content p {
+    margin-bottom: 0;
+}
